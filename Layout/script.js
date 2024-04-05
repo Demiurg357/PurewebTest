@@ -1,4 +1,5 @@
-function openTab(evt, tabName) {
+// Основные вкладки
+function openTab(tabName) {
   let tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -9,7 +10,7 @@ function openTab(evt, tabName) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+  document.querySelector('.' + tabName.toLowerCase()).className += " active";
 }
 
 //Фиксированная шапка
@@ -85,6 +86,7 @@ if (form) {
     for (let input of inputs) {
       let label = document.querySelector(`label[for="${input.id}"]`);
       if (input.value.trim() === '') {
+        input.style.borderColor = '#EC1211';
         if (label) {
           label.style.display = "block";
 
@@ -92,7 +94,7 @@ if (form) {
         fill++;
       } else {
         label.style.display = "none";
-
+        input.style.borderColor = '#a7a7a7';
       }
     }
     return fill;
@@ -110,6 +112,7 @@ if (form) {
     });
   });
 }
+//Отправка формы
 form.addEventListener('submit', function(event) {
 
   event.preventDefault();
