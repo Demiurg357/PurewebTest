@@ -45,7 +45,7 @@ openPopupButtons.forEach((button) => {
       popupBg.classList.add('active');
       targetPopup.classList.add('active');
       if (button.classList.contains('burger')) {
-        burgerButton.style.backgroundImage = 'url(img/burger_close.png)';
+        burgerButton.style.backgroundImage = 'url(img/Burger_close.png)';
       }
 
     }
