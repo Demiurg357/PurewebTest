@@ -35,19 +35,19 @@ let closePopupButtons = document.querySelectorAll('.close_popup');
 let burgerButton = document.querySelector('.burger');
 openPopupButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
-    
+
     let targetId = button.getAttribute('data-target');
     let targetPopup = document.getElementById(targetId);
     if (targetPopup) {
-      if (document.getElementById('popup_menu').classList.contains('active')){
+      if (document.getElementById('popup_menu').classList.contains('active')) {
         document.getElementById('popup_menu').classList.remove('active');
       }
       popupBg.classList.add('active');
       targetPopup.classList.add('active');
-      if (button.classList.contains('burger')){
+      if (button.classList.contains('burger')) {
         burgerButton.style.backgroundImage = 'url(img/burger_close.png)';
       }
-      
+
     }
   });
 });
@@ -59,7 +59,7 @@ closePopupButtons.forEach((button) => {
     });
     burgerButton.style.backgroundImage = 'url(img/burger.png)';
   });
-   
+
 });
 document.addEventListener('click', (e) => {
   if (e.target === popupBg) {
@@ -113,11 +113,11 @@ if (form) {
   });
 }
 //Отправка формы
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
 
   event.preventDefault();
-    fields.style.display = 'none';
-    success.style.display = 'flex';
+  fields.style.display = 'none';
+  success.style.display = 'flex';
 });
 
 //маска телефона
@@ -163,3 +163,16 @@ window.addEventListener('load', function () {
   telMask();
 });
 
+//Cookie 
+window.addEventListener('load', function () {
+  let cookie = document.querySelector('.cookie');
+  let btns = cookie.querySelectorAll('button');
+  setTimeout(function() {
+    cookie.classList.add('active'); 
+  }, 3000);
+  btns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      cookie.classList.remove('active'); 
+    });
+  }); 
+});

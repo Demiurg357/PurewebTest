@@ -366,8 +366,11 @@
                     </div>
                     <div class="field">
                         <label>Phone number<span style="color: red;">*</span></label>
-                        <input type="tel" name="tel" id="tel" placeholder="+7 (999)-999-99-99" required
-                            autocomplete="tel">
+                        <div class="flag_container">
+                            <span class="icon_flag"></span>
+                            <input type="tel" name="tel" id="tel" placeholder="+7 (999)-999-99-99" required
+                                autocomplete="tel">
+                        </div>
                         <label for="tel" class="current error_msg">This field is required.</label>
                     </div>
                     <div class="field">
@@ -443,5 +446,19 @@
         </div>
     </div>
 </footer>
+<div class="cookie">
+    <div class="cookie_wrap">
+        <p class="cookie_txt">This website uses cookies to ensure you get the best experience on our website. They
+            also
+            allow us to analyze user behavior in order to constantly improve the website for you.</p>
+        <div class="cookie_btn">
+            <button class="contact_btn">Accept</button>
+            <button class="contact_btn white_btn">Decline</button>
+        </div>
+        <button class="close_cookie">
+            <img src="img/close.png" alt="">
+        </button>
+    </div>
+</div>
 
 </html>
